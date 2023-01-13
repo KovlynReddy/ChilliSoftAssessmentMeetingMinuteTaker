@@ -1,0 +1,37 @@
+﻿
+<div id="Modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Recipient:</label>
+                    <input id="lat" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Recipient:</label>
+                    <input id="lon" type="text" class="form-control">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button id="CreateMeetUp" type="button" class="btn btn-primary">Create MeetUp</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+   // $('#Modal').modal('show');
+    var myModal = new bootstrap.Modal(document.getElementById('Modal'), options)
+    myModal.show()
+    //var modalToggle = document.getElementById('Modal') // relatedTarget
+    //myModal.show(modalToggle)
+</script>

@@ -1,0 +1,50 @@
+﻿@model List<ChilliSoftAssessmentMeetingMinuteTakerDLL.ViewModels.MeetingHeaderViewModel>
+
+<div id="meeting">
+    <div id="meetingBody" class="card mx-auto" style="max-width:400px">
+
+        <div class="card-header bg-transparent">
+            <div class="navbar navbar-expand p-0">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a href="#!" class="nav-link">
+                            Meetings
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#!" class="nav-link">
+                            <i class="fas fa-plus"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card-body p-4" style="height:500px;overflow:auto;">
+            @foreach (var item in Model)
+            {
+            <partial name="_meetingHeader" model="item" />
+                
+            }
+
+            <div class="d-flex align-items-baseline mb-4">
+                <div class="pe-2 w-100 position-absolute bottom-1">
+                    <a href="#!" class="nav-link">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </div>
+                @*text-end justify-content-end*@
+            </div>
+
+        </div>
+
+        <div class="card-footer bg-transparent position-absolute bottom-0 w-100 m0 p-1">
+            <button class="btn btn-primary" data-bs-toggle="modal"data-bs-target="#MeetingModal">
+                <i class="fas fa-plus"></i>
+           </button>
+        </div>
+
+    </div>
+</div>

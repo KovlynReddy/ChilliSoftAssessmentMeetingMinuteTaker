@@ -1,0 +1,18 @@
+﻿@model ChilliSoftAssessmentMeetingMinuteTakerDLL.ViewModels.MeetingHeaderViewModel
+@{
+    int typeId = Model.MeetingTypeId;
+    Model.MeetingType = Model.AllTypes.FirstOrDefault(m => m.Id == typeId).MeetingTypeName;
+}
+
+<div class="d-flex align-items-baseline mb-4 ">
+    <div class="pe-2 w-100 ">
+        <div class="card card-text p-2 px-3 m-1 MeetingOption">
+    <input hidden class="MeetingHeadId" value="@Model.Id" />
+          @Model.MeetingName
+            <div class="small ">
+                @Model.MeetingType
+            </div>
+        </div>
+    </div>
+    @*text-end justify-content-end*@
+</div>

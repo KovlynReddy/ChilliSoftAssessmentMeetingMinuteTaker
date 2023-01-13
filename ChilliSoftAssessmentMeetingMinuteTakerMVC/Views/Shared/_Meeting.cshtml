@@ -1,0 +1,67 @@
+﻿@model ChilliSoftAssessmentMeetingMinuteTakerDLL.ViewModels.MeetingViewModel
+
+
+
+<div id="meeting">
+    <div id="meetingBody" class="card mx-auto" style="max-width:400px">
+       
+        <div class="card-header bg-transparent">
+            <div class="navbar navbar-expand p-0">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a href="#!" class="nav-link">
+                                <div class="position-relative avatar">
+                                <img class="img-fluid rounded-circle" src="profileimage.png" />
+                                <span class="position-absolute bottom-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle">
+                                <span class="visually-hidden">new alerts</span>
+                                 </span>
+                                </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#!" class="nav-link">
+                            @Model.MeetingName
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#!" class="nav-link">
+                            <i class="fas fa-phone-alt"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#!" class="nav-link">
+                            <i class="fas fa-video"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#!" class="nav-link">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="MeetingChatBody" class="card-body p-4" style="height:500px;overflow:auto;">
+
+             @foreach (var item in Model.Messages.Where(m=>m.MeetingId==Model.MeetingId))
+            {
+                <partial name="_meetingMessage" model="item"/>
+                
+            }
+
+        </div>
+
+        <div class="card-footer bg-transparent position-absolute bottom-0 w-100 m0 p-1">
+            <partial name="_sendMeetingMessage" model="Model.NewMessage" />
+        </div>
+
+    </div>
+</div>
+
+
+
+
+

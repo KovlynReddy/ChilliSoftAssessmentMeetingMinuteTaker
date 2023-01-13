@@ -1,0 +1,32 @@
+﻿@model ChilliSoftAssessmentMeetingMinuteTakerDLL.ViewModels.MeetingItemVeiwModel
+@{
+    int statusId = Model.StatusId;
+    Model.Status = Model.Statuses.FirstOrDefault(m=>m.Id==statusId).StatusName;
+}
+
+<div class="d-flex align-items-baseline mb-4 ">
+    <div class="pe-2 w-100 row ">
+        <div class="card card-text p-2 px-3 m-1 MeetingItemOption ">
+             <input hidden class="MeetingItemHeadId" value="@Model.Id" />
+            <div class="col-8 ">
+
+            @Model.ItemName
+        <div class="small ">
+            @Model.Comment
+            @Model.Status
+        </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <button id="UpdateItemButton" class="btn btn-light UpdateItemButton" data-bs-toggle="modal" data-bs-target="#UpdateItemModal">
+            <i class="fas fa-pencil"></i>
+                <input hidden class="ItemId" value="@Model.Id"/>
+                <input hidden class="ItemName" value="@Model.ItemName" />
+                <input hidden class="ItemComment" value="@Model.Comment" />
+                <input hidden class="ItemStatus" value="@Model.StatusId" />
+        </button>
+        </div>
+    </div>
+    @*text-end justify-content-end*@
+
+</div>
